@@ -6,7 +6,6 @@ export interface BookData {
   title: string
   author: string
   cover: string
-  coverOverride?: string  // Local image path to override the default cover
   quote?: string
   why?: string
   featured?: boolean
@@ -17,9 +16,18 @@ interface BookCardProps {
   featured?: boolean
 }
 
+// Helper to resolve asset paths with base URL
+const getAssetPath = (path: string) => {
+  const base = import.meta.env.BASE_URL || '/'
+  // If path already starts with base or is absolute URL, return as-is
+  if (path.startsWith('http') || path.startsWith(base)) return path
+  // Remove leading slash from path and append to base
+  return `${base}${path.replace(/^\//, '')}`
+}
+
 export function BookCard({ book, featured = false }: BookCardProps) {
   const [isHovered, setIsHovered] = useState(false)
-  const coverSrc = book.coverOverride || book.cover
+  const coverSrc = getAssetPath(book.cover)
 
   if (featured) {
     return (

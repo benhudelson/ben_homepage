@@ -21,7 +21,7 @@ export function Bookshelf({ books }: BookshelfProps) {
       {/* Featured books - 3D cards */}
       {featuredBooks.length > 0 && (
         <div className="mb-16">
-          <h3 className="text-lg font-medium text-neon mb-6">Featured Reads</h3>
+          <h3 className="text-lg font-medium text-neon mb-6">Influential Reads</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredBooks.map(book => (
               <BookCard key={book.id} book={book} featured />
@@ -33,7 +33,7 @@ export function Bookshelf({ books }: BookshelfProps) {
       {/* Library grid */}
       {libraryBooks.length > 0 && (
         <div>
-          <h3 className="text-lg font-medium text-white/50 mb-6">The Library</h3>
+          <h3 className="text-lg font-medium text-white/50 mb-6">Other books on my shelf</h3>
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
             {libraryBooks.map(book => (
               <BookCard key={book.id} book={book} />
