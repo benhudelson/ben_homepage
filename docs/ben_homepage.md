@@ -113,25 +113,21 @@ A premium, high-performance personal site blending technical leadership with aut
 3.  Smooth page transitions between sections
 4.  Loading states and skeleton screens (if needed)
 
-### Phase 7: Deployment (Configuration Complete)
-1.  **Run Deployment Command**:
-    ```bash
-    npm run deploy
-    ```
-    *This runs the build and pushes the `dist` folder to a `gh-pages` branch on your GitHub repository.*
+### Phase 7: Deployment (Via GitHub Actions)
+**I have already configured and pushed the deployment workflow for you.**
 
-    > [!IMPORTANT]
-    > **Free Hosting Requirement**: For a free GitHub account, your repository **must be Public** to use GitHub Pages. If your repository is Private, GitHub requires a Pro account. Check **Settings > General > Danger Zone** to change visibility to Public if needed.
-
-2.  **Configure GitHub Repo**:
+1.  **Activate on GitHub**:
     -   Go to your repository on GitHub.
     -   Click **Settings** > **Pages** (sidebar).
-    -   Under **Build and deployment** > **Source**, select **Deploy from a branch**.
-    -   Under **Branch**, select `gh-pages` and `/ (root)`.
-    -   Click **Save**.
+    -   Under **Build and deployment** > **Source**, change "Deploy from a branch" to **GitHub Actions**.
+    -   (No other configuration needed. The site will deploy automatically within 1-2 minutes).
 
-3.  **View Site**:
-    -   GitHub will display the URL (usually `https://benhudelson.github.io/ben_homepage/`).
+2.  **View Site**:
+    -   Once the action finishes (check the "Actions" tab), your site will be live at:
+    -   `https://benhudelson.github.io/ben_homepage/`
+
+    > [!IMPORTANT]
+    > **Free Hosting Requirement**: Start ensuring your repository is **Public** (Settings > General > Danger Zone). Private repos require a paid Pro account for Pages.
 
 ## 5. File Structure
 ```
