@@ -4,7 +4,7 @@
     "type": "marathon",
     "title": "Enterprise Leadership",
     "company": "TRIMEDX",
-    "description": "A sustained climb from Data Science to Enterprise Management. Building resilient teams and scalable architectures over years, not quarters."
+    "description": "A sustained climb from R&D to Enterprise Management to Operations Management and Agile Coaching. Building resilient teams, scalable operations, and developing future leadersover years, not quarters."
   },
   {
     "date": "2014 - 2017",
@@ -18,7 +18,7 @@
     "type": "sprint",
     "title": "MBA",
     "company": "Butler University",
-    "description": "An intensive two-year push while working full-time. Compressed learning in strategy, finance, and leadership."
+    "description": "An intensive two-year push while working full-time. Compressed learning in marketing and leadership. International immersion project in Sweden and Ghana."
   },
   {
     "date": "2010 - 2014",
@@ -28,10 +28,10 @@
     "description": "Four years of deep-dive analysis and methodical problem-solving. Patience and precision that built a lasting technical foundation."
   },
   {
-    "date": "2006 - 2010",
+    "date": "2006 - 2012",
     "type": "marathon",
     "title": "BS Mathematics",
     "company": "Purdue University",
-    "description": "The long game: four years of rigorous quantitative training. Foundational thinking that still pays dividends today."
+    "description": "The long game: initial quantitative training. Foundational thinking that still pays dividends today."
   }
 ]
