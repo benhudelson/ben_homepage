@@ -3,7 +3,7 @@
 ## 1. Vision & Persona
 **"The Active Professional"**
 A premium, high-performance personal site blending technical leadership with authentic humanity.
--   **Core Message**: "I run Agile teams with speed, but I build resilient architectures/organizations for the long haul."
+-   **Core Message**: "I run Agile teams with speed, Operations teams for scale, and I build resilient organizations for the long haul."
 -   **Visual Identity**: Deep Navy/Charcoal (Business) + Electric Blue/Neon (Energy). Structured typography (Inter/Oswald).
 
 ## 2. Architecture & Tech Stack

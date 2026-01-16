@@ -18,7 +18,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-xl md:text-2xl text-white/70 mb-6"
         >
-          Technical Leader & Agile Coach
+          Technical Leader, Operations Leader, & Agile Coach
         </motion.p>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -26,7 +26,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-lg text-electric max-w-2xl mx-auto"
         >
-          I run Agile teams with speed, but I build resilient architectures and organizations for the long haul.
+          I run Agile teams with speed, Operations teams for scale, and I build resilient organizations for the long haul.
         </motion.p>
         <motion.div
           initial={{ opacity: 0 }}
