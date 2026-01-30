@@ -7,9 +7,51 @@
         "blurb": ""
     },
     {
-        "id": "first_law",
-        "title": "First Law Trilogy",
-        "poster": "/images/movies/first_law.jpg",
+        "id": "unforgiven",
+        "title": "Unforgiven",
+        "poster": "/images/movies/unforgiven.jpg",
+        "quote": "",
+        "blurb": ""
+    },
+    {
+        "id": "dances_with_wolves",
+        "title": "Dances with Wolves",
+        "poster": "/images/movies/dances_with_wolves.jpg",
+        "quote": "",
+        "blurb": ""
+    },
+    {
+        "id": "hell_or_high_water",
+        "title": "Hell or High Water",
+        "poster": "/images/movies/hell_or_high_water.jpg",
+        "quote": "",
+        "blurb": ""
+    },
+    {
+        "id": "drive",
+        "title": "Drive",
+        "poster": "/images/movies/drive.jpg",
+        "quote": "",
+        "blurb": ""
+    },
+    {
+        "id": "godless",
+        "title": "Godless",
+        "poster": "/images/movies/godless.jpg",
+        "quote": "",
+        "blurb": ""
+    },
+    {
+        "id": "the_big_lebowski",
+        "title": "The Big Lebowski",
+        "poster": "/images/movies/the_big_lebowski.jpg",
+        "quote": "",
+        "blurb": ""
+    },
+    {
+        "id": "the_darjeeling_limited",
+        "title": "The Darjeeling Limited",
+        "poster": "/images/movies/the_darjeeling_limited.jpg",
         "quote": "",
         "blurb": ""
     }

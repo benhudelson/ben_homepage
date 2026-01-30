@@ -1,7 +1,7 @@
 import { useState, ReactNode } from 'react'
 import { motion } from 'framer-motion'
 import { Section } from './layout'
-import { MovieGrid, MovieItem } from './MovieGrid'
+import { MediaGrid, MediaItem } from './MediaGrid'
 
 export interface HobbyItem {
   id: string
@@ -13,7 +13,9 @@ export interface HobbyItem {
 
 interface BentoGridProps {
   items: HobbyItem[]
-  movies?: MovieItem[]
+  movies?: MediaItem[]
+  books?: MediaItem[]
+  music?: MediaItem[]
 }
 
 // Helper to resolve asset paths with base URL
@@ -110,12 +112,14 @@ function PassionCard({ item }: { item: HobbyItem }) {
   )
 }
 
-export function BentoGrid({ items, movies = [] }: BentoGridProps) {
+export function BentoGrid({ items, movies = [], books = [], music = [] }: BentoGridProps) {
   // Find items by layout type
   const portraitLeft = items.find(i => i.layout === 'portrait-left')
   const landscapeTop = items.find(i => i.layout === 'landscape-top')
   const landscapeBottom = items.find(i => i.layout === 'landscape-bottom')
   const portraitRight = items.find(i => i.layout === 'portrait-right')
+
+  const hasMedia = movies.length > 0 || books.length > 0 || music.length > 0
 
   return (
     <Section id="hobbies">
@@ -189,10 +193,18 @@ export function BentoGrid({ items, movies = [] }: BentoGridProps) {
         )}
       </div>
 
-      {/* Favorite Movies */}
-      <MovieGrid movies={movies} />
+      {/* Favorite Media Section */}
+      {hasMedia && (
+        <div className="mt-16">
+          <h3 className="text-lg font-medium text-neon mb-6">Favorite Media</h3>
+          <MediaGrid items={movies} type="movies" title="Movies & TV Series" />
+          <MediaGrid items={books} type="books" title="Books" />
+          <MediaGrid items={music} type="music" title="Albums" />
+        </div>
+      )}
     </Section>
   )
 }
 
-export type { MovieItem }
+export type { MediaItem }
+

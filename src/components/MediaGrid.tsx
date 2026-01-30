@@ -1,7 +1,7 @@
 import { useState, ReactNode } from 'react'
 import { motion } from 'framer-motion'
 
-export interface MovieItem {
+export interface MediaItem {
     id: string
     title: string
     poster: string
@@ -9,8 +9,12 @@ export interface MovieItem {
     blurb: string
 }
 
-interface MovieGridProps {
-    movies: MovieItem[]
+export type MediaType = 'movies' | 'books' | 'music'
+
+interface MediaGridProps {
+    items: MediaItem[]
+    type: MediaType
+    title: string
 }
 
 // Helper to resolve asset paths with base URL
@@ -52,8 +56,33 @@ const parseLinks = (text: string) => {
     return parts
 }
 
-function MovieCard({ movie }: { movie: MovieItem }) {
+// Get aspect ratio class based on media type
+const getAspectRatio = (type: MediaType) => {
+    switch (type) {
+        case 'music':
+            return 'aspect-square' // 1:1 for album art
+        case 'movies':
+        case 'books':
+        default:
+            return 'aspect-[2/3]' // Movie poster / book cover ratio
+    }
+}
+
+// Get grid columns based on media type
+const getGridCols = (type: MediaType) => {
+    switch (type) {
+        case 'music':
+            return 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6'
+        case 'movies':
+        case 'books':
+        default:
+            return 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5'
+    }
+}
+
+function MediaCard({ item, type }: { item: MediaItem; type: MediaType }) {
     const [isHovered, setIsHovered] = useState(false)
+    const aspectRatio = getAspectRatio(type)
 
     return (
         <motion.div
@@ -61,19 +90,19 @@ function MovieCard({ movie }: { movie: MovieItem }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.5 }}
-            className="relative overflow-hidden rounded-xl bg-navy cursor-pointer aspect-[2/3]"
+            className={`relative overflow-hidden rounded-xl bg-navy cursor-pointer ${aspectRatio}`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            {/* Movie poster */}
+            {/* Poster/Cover image */}
             <motion.div
                 animate={{ scale: isHovered ? 1.05 : 1 }}
                 transition={{ duration: 0.4, ease: 'easeOut' }}
                 className="absolute inset-0"
             >
                 <img
-                    src={getAssetPath(movie.poster)}
-                    alt={movie.title}
+                    src={getAssetPath(item.poster)}
+                    alt={item.title}
                     className="w-full h-full object-cover"
                 />
             </motion.div>
@@ -85,7 +114,7 @@ function MovieCard({ movie }: { movie: MovieItem }) {
                 transition={{ duration: 0.3 }}
             >
                 <h4 className="text-lg font-heading font-bold text-white">
-                    {movie.title}
+                    {item.title}
                 </h4>
             </motion.div>
 
@@ -97,28 +126,34 @@ function MovieCard({ movie }: { movie: MovieItem }) {
                 transition={{ duration: 0.3 }}
             >
                 <h4 className="text-lg font-heading font-bold text-neon mb-3">
-                    {movie.title}
+                    {item.title}
                 </h4>
-                <blockquote className="text-white/90 text-sm italic border-l-2 border-electric pl-3 mb-4">
-                    "{movie.quote}"
-                </blockquote>
-                <p className="text-white/70 text-sm leading-relaxed">
-                    {parseLinks(movie.blurb)}
-                </p>
+                {item.quote && (
+                    <blockquote className="text-white/90 text-sm italic border-l-2 border-electric pl-3 mb-4">
+                        "{item.quote}"
+                    </blockquote>
+                )}
+                {item.blurb && (
+                    <p className="text-white/70 text-sm leading-relaxed">
+                        {parseLinks(item.blurb)}
+                    </p>
+                )}
             </motion.div>
         </motion.div>
     )
 }
 
-export function MovieGrid({ movies }: MovieGridProps) {
-    if (movies.length === 0) return null
+export function MediaGrid({ items, type, title }: MediaGridProps) {
+    if (items.length === 0) return null
+
+    const gridCols = getGridCols(type)
 
     return (
-        <div className="mt-16">
-            <h3 className="text-lg font-medium text-neon mb-6">Favorite Media</h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                {movies.map(movie => (
-                    <MovieCard key={movie.id} movie={movie} />
+        <div className="mb-8">
+            <h4 className="text-md font-medium text-white/70 mb-4">{title}</h4>
+            <div className={`grid ${gridCols} gap-4`}>
+                {items.map(item => (
+                    <MediaCard key={item.id} item={item} type={type} />
                 ))}
             </div>
         </div>

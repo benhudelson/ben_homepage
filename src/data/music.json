@@ -1,0 +1,23 @@
+[
+    {
+        "id": "tango_in_the_night",
+        "title": "Tango in the Night",
+        "poster": "/images/music/tango_in_the_night.jpg",
+        "quote": "",
+        "blurb": ""
+    },
+    {
+        "id": "fear_inoculum",
+        "title": "Fear Inoculum",
+        "poster": "/images/music/fear_inoculum.jpg.webp",
+        "quote": "",
+        "blurb": ""
+    },
+    {
+        "id": "random_access_memories",
+        "title": "Random Access Memories",
+        "poster": "/images/music/random_access_memories.jpg",
+        "quote": "",
+        "blurb": ""
+    }
+]

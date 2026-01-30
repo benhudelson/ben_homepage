@@ -1,0 +1,23 @@
+[
+    {
+        "id": "first_law",
+        "title": "First Law Trilogy",
+        "poster": "/images/books/first_law.jpg",
+        "quote": "",
+        "blurb": ""
+    },
+    {
+        "id": "stormlight_archive",
+        "title": "Stormlight Archive",
+        "poster": "/images/books/way_of_kings.jpg",
+        "quote": "",
+        "blurb": ""
+    },
+    {
+        "id": "the_expanse",
+        "title": "The Expanse",
+        "poster": "/images/books/cibola_burn.jpg",
+        "quote": "",
+        "blurb": ""
+    }
+]
