@@ -1,5 +1,6 @@
 import { Navbar, Footer } from '../components/layout'
 import { BentoGrid, HobbyItem, MediaItem } from '../components/BentoGrid'
+import { RacingSection } from './RacingPage'
 import hobbiesData from '../data/hobbies.json'
 import moviesData from '../data/movies.json'
 import booksMediaData from '../data/books.media.json'
@@ -16,6 +17,7 @@ export function BeyondWorkPage() {
                     books={booksMediaData as MediaItem[]}
                     music={musicData as MediaItem[]}
                 />
+                <RacingSection />
             </main>
             <Footer />
         </div>

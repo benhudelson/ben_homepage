@@ -5,7 +5,6 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 const navLinks = [
   { href: '#experience', label: 'Experience' },
   { href: '#bookshelf', label: 'Bookshelf' },
-  { href: '#racing', label: 'Racing' },
 ]
 
 export function Navbar() {

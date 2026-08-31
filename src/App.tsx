@@ -5,7 +5,6 @@ import { Timeline } from './components/Timeline'
 import { Bookshelf } from './components/Bookshelf'
 import { TimelineItemData } from './components/TimelineItem'
 import { BookData } from './components/BookCard'
-import { RacingSection } from './pages/RacingPage'
 import experienceData from './data/experience.json'
 import booksData from './data/books.json'
 
@@ -27,7 +26,6 @@ function App() {
       <Hero />
       <Timeline items={experienceData as TimelineItemData[]} />
       <Bookshelf books={booksData as BookData[]} />
-      <RacingSection />
       <Footer />
     </div>
   )
