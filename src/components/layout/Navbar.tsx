@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 const navLinks = [
-  { href: '#philosophy', label: 'Philosophy' },
   { href: '#experience', label: 'Experience' },
   { href: '#bookshelf', label: 'Bookshelf' },
   { href: '#racing', label: 'Racing' },
